@@ -18,16 +18,16 @@ RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # NVIDIA GPU
-ARG repository
-FROM ${repository}:9.0-runtime-ubuntu16.04
-LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"
+# ARG repository
+# FROM ${repository}:9.0-runtime-ubuntu16.04
+# LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"
 
-ENV CUDNN_VERSION 7.1.2.21
-LABEL com.nvidia.cudnn.version="${CUDNN_VERSION}"
+# ENV CUDNN_VERSION 7.1.2.21
+# LABEL com.nvidia.cudnn.version="${CUDNN_VERSION}"
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-            libcudnn7=$CUDNN_VERSION-1+cuda9.0 && \
-    rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#             libcudnn7=$CUDNN_VERSION-1+cuda9.0 && \
+#     rm -rf /var/lib/apt/lists/*
 
 # Install TensorFlow GPU version
 ENV TENSORFLOW_VERSION 1.8.0
