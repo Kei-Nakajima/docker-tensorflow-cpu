@@ -70,7 +70,7 @@ RUN echo "c.NotebookApp.ip = '*'" >>${CONFIG} && \
 RUN echo "c.InteractiveShellApp.exec_lines = ['%matplotlib inline']" >>${CONFIG_IPYTHON} 
 
 # Copy sample notebooks.
-COPY notebooks /notebooks
+# COPY notebooks /notebooks
 
 # port
 EXPOSE 8888 6006 
